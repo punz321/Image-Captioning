@@ -1,2 +1,11 @@
 # Image-Captioning
-Providing captions for images using EfficientNet and RoBERTA
+Providing captions for images using EfficientNet and RoBERTa
+
+# Introduction
+In today’s world, there is a huge volume of images shared and consumed on the internet. From social media platforms to e-commerce websites, images have become a universal language of communication, allowing individuals and organizations to convey ideas, emotions and information. However, while images themselves are powerful, they often lack the contextual information that text provides. This is where the concept of "image captioning" comes into play. Image captioning is a field which analyzes the image and generates a descriptive and human-like caption that can briefly describe the image. It lies at the intersection of Computer Vision and Natural Language Processing (NLP). Such systems enhance the accessibility and searchability of image content making them extremely useful in today’s time.
+
+# Methodology
+As part of our process, we provide a comprehensive framework for captioning images by utilizing the most recent models and task-specific custom classes. The ImageEncoder module harnesses the power of EfficientNetB0, serving as the backbone for extracting image features. The image is converted into a fixed-size feature vector with the addition of a flatten and dense layer. In parallel, the TextEncoder module uses a strong transformer-based model called RoBERTa to extract the semantic content of textual input. By taking the mean of the output embeddings, we obtain a concise representation of the text. An output layer, a sequence of DecoderLayers, and an embedding layer make up the crucial part called the Decoder. Coherent caption production is made easier by each DecoderLayer's implementation of the complex multi-head attention mechanism, feed-forward network, and layer normalization. These elements come together to form the ImageCaptioningModel, which combines the text and picture encoders with the decoder in an easy-to-use manner. We instantiate the ImageCaptioningModel with predefined hyperparameters, build it using an optimizer, and supply an appropriate loss function in order to operationalize our methods. Lastly, we use carefully constructed train and validation datasets to train the model, enabling us to achieve our goal of producing insightful captions for photos.
+
+# Results
+![loss curve](https://github.com/punz321/Image-Captioning/assets/112681433/47f0f5cb-8f66-42df-85e3-68d6bded63a5)
